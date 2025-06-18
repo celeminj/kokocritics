@@ -3,7 +3,8 @@
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
 ## Capturas del proyecto(empezando con el desarrollo)
-https://i.ibb.co/kRB6z3t/Screenshot-2025-06-18-at-21-07-58-Koko-Critic.png
+
+ <img src="https://i.ibb.co/kRB6z3t/Screenshot-2025-06-18-at-21-07-58-Koko-Critic.png" alt="Captura" width="1200" style="border: '3px' solid #000; border-radius: '10px';">
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
