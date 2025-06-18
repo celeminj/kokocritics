@@ -1,0 +1,63 @@
+<div class="all-background">
+  <div class="register-background">
+    <img src="/img/logo.png" width="120" height="120" id="imagen-spoti" alt="Logo">
+    <h3><strong>Empieza ya a escuchar musica sin anuncios</strong></h3>
+    <form action="" class="row g-3 needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="InputEmail" class="form-label">Correo Electrónico</label>
+        <input 
+          type="text" 
+          id="InputEmail"
+          name="username"
+          class="form-control"
+          required
+          [(ngModel)]="user.username"
+          #username="ngModel"
+          (input)="errorMessage = null"
+          [ngClass]="{
+            'is-invalid': username.invalid && (username.touched || username.dirty),
+            'is-valid': username.valid && (username.touched || username.dirty)
+          }"
+        />
+    <div class="invalid-feedback">
+      <span *ngIf="username.errors?.['required']">El correo es obligatorio.</span>
+      <span *ngIf="username.errors?.['pattern']">Ingresa un correo válido.</span>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="InputPassword" class="form-label">Contraseña</label>
+    <input 
+      type="password"
+      id="InputPassword"
+      name="password"
+      class="form-control"
+      required
+      minlength="6"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      (input)="errorMessage = null"
+      [ngClass]="{
+        'is-invalid': password.invalid && (password.touched || password.dirty),
+        'is-valid': password.valid && (password.touched || password.dirty)
+      }"
+    />
+    <div class="invalid-feedback" *ngIf="password.errors?.['required']">La contraseña es obligatoria.</div>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+
+      <div class="mb-3">
+        <a href="/register" class="links">¿No tienes cuenta? Registrate</a>
+      </div>
+      
+      <button class="btn btn-primary botonRegister" type="button" (click)="loginUser()">
+        Iniciar Sesión
+      </button>
+    </form>
+  </div>
+
+</div>

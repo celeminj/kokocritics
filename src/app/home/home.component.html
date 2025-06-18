@@ -1,0 +1,18 @@
+<!-- <div class="SpotifyFree">
+  <img src="/img/logo.png" width="120" height="120" id="imagen-spoti" alt="Logo">
+  <div class="col-lg-6 mx-auto">
+    <p class="description">
+        Sin limites de musica, sin publicidad
+    </p>
+    <button class="btn btn- me-md-2" id="login" type="button" [routerLink]="['/login']">Iniciar Sesión</button>
+    <button class="btn btn-info me-md-2" type="button" [routerLink]="['/register']">Registrarse</button>
+  </div>
+</div> -->
+<div class="home-container">
+  <h1>Bienvenido a KokoCritic</h1>
+  <p>Explore our collection of video games below:</p>
+<div *ngFor="let videogame of videogames" class="game-card">
+  <a [routerLink]="['/game', videogame.title]" class="game-link">
+    <img *ngIf="videogame.imageUrl" [src]="videogame.imageUrl" alt="{{ videogame.title }}" width="200" />
+  </a>
+</div>

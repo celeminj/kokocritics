@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+h1,h2,h3,h4,h5, button ,a{
+    font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p, li,ul{
+    font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}

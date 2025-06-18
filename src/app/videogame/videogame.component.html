@@ -1,0 +1,74 @@
+<div *ngIf="videogame && videogame.title" class="videogame-details-container">
+  <div class="videogame-container" 
+     [style.backgroundImage]="'url(' + videogame.coverUrl + ')'"
+     style="background-size: cover; background-position: center; height: 92vh; display: flex; justify-content: center; align-items: center;">
+  
+  <img 
+    *ngIf="videogame.imageUrl" 
+    [src]="videogame.imageUrl" 
+    alt="{{ videogame.title }}" 
+    width="300" 
+    class="interactive-card" 
+    (mousemove)="onMouseMove($event)" 
+    (mouseleave)="onMouseLeave()"
+  />
+  <div class="videogame-info">
+    <h2>{{ videogame.title }}</h2>
+
+    <div class="videogame-buttons">
+    <button (click)="openTrailer(videogame.trailerUrl)" class="trailer-button">
+    Ver Trailer
+    </button>
+    <button (click)="openWallapop(videogame.wallapopUrl)" class="wallapop-button">
+    Wallapop
+    </button>
+    <button (click)="openAmazon(videogame.amazonUrl)" class="amazon-button">
+    Amazon
+    </button>
+    </div>
+
+  <ul>
+            <li>
+            <strong>Plataforma:</strong>
+            <img *ngIf="platformIcons[videogame.platform]" 
+                [src]="platformIcons[videogame.platform]" 
+                [alt]="videogame.platform" 
+                width="24" 
+                height="24"
+                style="vertical-align: middle; margin-right: 6px;">
+            {{ videogame.platform }}
+            </li>
+
+
+
+    <li><strong>Descripción:</strong> {{ videogame.description }}</li>
+  </ul>
+  </div>
+</div>
+
+<div class="modal" *ngIf="showModal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close" (click)="closeModal()">&times;</button>
+    <iframe width="560" height="315" [src]="sanitizedTrailerUrl" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+  <div class="degradado-info"></div>
+
+  <h2>{{ videogame.title }}</h2>
+  <ul>
+<p><strong>Plataforma:</strong> {{ videogame.platform }}</p>
+  <p><strong>Fecha de lanzamiento:</strong> {{ releaseDateString }}</p>
+  <p><strong>Desarrollador:</strong> {{ videogame.developer }}</p>
+  <p><strong>Editor:</strong> {{ videogame.publisher }}</p>
+  <div class="videogame-details">
+    <p><strong>Clasificación:</strong> {{ videogame.rating }} | 10</p>
+    <p><strong>Género:</strong> {{ videogame.genre }}</p>
+    <p><strong>Descripción:</strong> {{ videogame.description }}</p>
+  </div>
+  </ul>
+</div>
+
+<div *ngIf="!videogame || !videogame.title">
+  <p>Cargando videojuego o no encontrado...</p>
+</div>

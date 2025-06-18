@@ -1,0 +1,96 @@
+
+     .register-background {
+    border-radius: 15px;
+    margin: 20px auto;
+    transition: box-shadow .3s;
+    width: 70ch;
+    padding: 70px;
+    background-repeat: no-repeat;
+    background-color: #191414;      
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(155deg, #05411a, #191414); 
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.floatLabel {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.link-container {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.botonRegister {
+    width: 100%;
+    max-width: 400px;
+}
+
+.links{
+    color: #00ff59;
+}
+.botonRegister{
+     margin: 5px;
+    padding: 10px 20px;
+    width: 50%;
+        transform: translate(130px, 15px);
+    align-self: center;
+    font-size: 1.10rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+    
+.botonRegister:hover{
+  background-color: #ffffff;
+  color:  rgb(19, 177, 66);
+}
+.valid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: .875em;
+  color: #198754;
+}
+
+.is-valid ~ .valid-feedback {
+  display: block;
+}
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: .875em;
+  color: #dc3545;
+}
+
+.is-invalid ~ .invalid-feedback {
+  display: block;
+}

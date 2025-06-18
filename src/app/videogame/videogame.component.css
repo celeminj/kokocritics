@@ -1,0 +1,171 @@
+.videogame-details-container{
+     background-color:#1F1E24;
+     color: #fff3df;
+}
+
+.interactive-card {
+  border-radius: 10px;
+  width: 20%;
+  margin-left: -400px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.videogame-info h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-left: 100px;
+     z-index: 4;
+}
+
+.videogame-info h4 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-left: 100px;
+    color: #ffffff;
+    z-index: 4;
+}
+.degradado-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%; 
+  background: linear-gradient(
+    to top,
+    rgba(20, 30, 40, 0.9),
+    rgba(20, 30, 40, 0)
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.videogame-content {
+  position: relative;
+  z-index: 2;
+  color: white; 
+  padding: 20px;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.videogame-info {
+  max-width: 800px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+.videogame-info li {
+  margin-bottom: 8px;
+}
+
+.trailer-button {
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 40px; /* deja espacio para el icono a la izquierda */
+  background-image: url('https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 24px 24px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+    padding-right: 2%;
+  height: 35px;
+  transition: background-color 0.3s ease;
+}
+
+.trailer-button:hover {
+  background-color: #ff3f3f;
+}
+
+.wallapop-button {
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 40px; /* deja espacio para el icono a la izquierda */
+  background-image: url('https://i.postimg.cc/D0CMD2pT/Wallapop-svg.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 24px 24px;
+  background-color: #00fdcf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 35px;
+  z-index: 3;
+  padding-right: 2%;
+  transition: background-color 0.3s ease;
+}
+
+.wallapop-button:hover {
+  background-color: #32ffd9;
+}
+
+.amazon-button{
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 40px; /* deja espacio para el icono a la izquierda */
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 24px 24px;
+  background-color: #FFB347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 35px;
+  padding-right: 2%;
+  transition: background-color 0.3s ease;
+  z-index: 4;
+}
+.amazon-button:hover {
+  background-color: #ff9500;
+}
+
+.videogame-buttons{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-left: 100px;
+  margin-top: 20px;
+  gap: 15px;
+}

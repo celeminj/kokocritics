@@ -1,0 +1,120 @@
+<div class="all-background">
+  <div class="register-background">
+    <img src="/img/logo.png" width="120" height="120" id="imagen-spoti" alt="Logo">
+    <h3><strong>Regístrate para empezar a escuchar musica sin anuncios</strong></h3>
+    <form action="" class="row g-3 needs-validation" novalidate>
+       <div class="mb-3">
+    <label for="InputName" class="form-label">Nombre</label>
+    <input 
+      type="text"
+      id="InputName"
+      name="username"
+      class="form-control"
+      required
+      [(ngModel)]="user.username"
+      #username="ngModel"
+      (input)="errorMessage = null"
+      [ngClass]="{
+        'is-invalid': username.invalid && (username.touched || username.dirty),
+        'is-valid': username.valid && (username.touched || username.dirty)
+      }"
+    />
+    <div class="invalid-feedback" *ngIf="username.errors?.['required']">El nombre es obligatorio.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="InputEmail" class="form-label">Correo Electrónico</label>
+    <input 
+      type="email" 
+      id="InputEmail"
+      name="email"
+      class="form-control"
+      required
+   
+      [(ngModel)]="user.email"
+      #email="ngModel"
+      (input)="errorMessage = null"
+      [ngClass]="{
+        'is-invalid': email.invalid && (email.touched || email.dirty),
+        'is-valid': email.valid && (email.touched || email.dirty)
+      }"
+    />
+    <div *ngIf="email.errors?.['email']" class="text-danger">
+      Ingresa un correo electrónico válido.
+    </div>
+<div *ngIf="email.errors?.['email'] && email.value === ''" class="text-danger">
+  El correo electrónico no puede estar vacío.
+</div>
+<div *ngIf="email.errors?.['email'] && email.value !== ''" class="text-danger">
+  El correo electrónico debe tener un formato válido.
+</div>
+<div *ngIf="email.errors?.['required']" class="text-danger">
+  El correo electrónico es obligatorio.
+</div>
+  <div *ngIf="emailDuplicated" class="text-danger">
+  Este email ya está registrado.
+</div>
+
+    <div class="invalid-feedback">
+      <span *ngIf="email.errors?.['required']">El correo es obligatorio.</span>
+      <span *ngIf="email.errors?.['pattern']">Ingresa un correo válido.</span>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="InputPassword" class="form-label">Contraseña</label>
+    <input 
+      type="password"
+      id="InputPassword"
+      name="password"
+      class="form-control"
+      required
+      minlength="6"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      (input)="errorMessage = null"
+      [ngClass]="{
+        'is-invalid': password.invalid && (password.touched || password.dirty),
+        'is-valid': password.valid && (password.touched || password.dirty)
+      }"
+    />
+    <div class="invalid-feedback" *ngIf="password.errors?.['required']">La contraseña es obligatoria.</div>
+    <div class="invalid-feedback" *ngIf="password.errors?.['minlength']">
+      La contraseña debe tener al menos 6 caracteres.
+    </div>
+  </div>
+  <div class="mb-3">
+  <label for="avatarUrl" class="form-label">Imagen de Perfil</label>
+  <input 
+  type="file"
+  id="avatarUrl"
+  name="avatarUrl"
+  class="form-control"
+  accept="image/*"
+  (change)="onFileSelected($event)"
+  required
+/>
+
+  <div class="invalid-feedback" *ngIf="errorMessage === 'La imagen de perfil es obligatoria.'">
+    La imagen de perfil es obligatoria.
+  </div>
+</div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  
+
+
+      <div class="mb-3">
+        <a href="/login" class="links">Si ya tienes cuenta, Iniciar Sesión</a>
+      </div>
+      
+      <button class="btn btn-primary botonRegister" type="button" (click)="registrarUser()">
+        Registrarse
+      </button>
+    </form>
+  </div>
+  <p>This site is protected by reCAPTCHA and the Google
+  Privacy Policy and Terms of Service apply.</p>
+</div>
