@@ -2,13 +2,8 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
+## Capturas del proyecto(empezando con el desarrollo)
+https://i.ibb.co/kRB6z3t/Screenshot-2025-06-18-at-21-07-58-Koko-Critic.png
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
